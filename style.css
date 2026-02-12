@@ -1,0 +1,181 @@
+/* ---------- Reset / base ---------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.5;
+
+    background-color: #f5f6f8;
+    color: #222;
+
+    display: grid;
+
+    grid-template-columns: 240px 1fr 1fr 1fr;
+    grid-template-rows: auto auto 1fr;
+
+    grid-template-areas:
+        "header nav nav nav"
+        "aside intro intro intro"
+        "aside board board board";
+}
+
+
+/* ---------- Layout areas ---------- */
+
+header {
+    grid-area: header;
+    background: #ffffff;
+    padding: 16px 24px;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+}
+
+nav {
+    grid-area: nav;
+    background: #ffffff;
+    padding: 12px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+aside {
+    grid-area: aside;
+    background: #2f343a;
+    color: #e6e6e6;
+    padding: 24px 16px;
+}
+
+section.intro {
+    grid-area: intro;
+    background: #ffffff;
+    padding: 20px 24px;
+    border-bottom: 1px solid #ddd;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section.board {
+    grid-area: board;
+
+    padding: 24px;
+    background: #f5f6f8;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 16px;
+}
+
+
+/* ---------- Sidebar ---------- */
+
+aside ul {
+    list-style: none;
+    margin-bottom: 32px;
+}
+
+aside li {
+    margin-bottom: 10px;
+}
+
+aside a {
+    display: block;
+    padding: 8px 10px;
+    color: inherit;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+aside a:hover {
+    background: #3b4046;
+}
+
+
+/* ---------- Buttons / inputs ---------- */
+
+button {
+    padding: 8px 14px;
+    background: #e4e6ea;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font: inherit;
+}
+
+button:hover {
+    background: #d6d8dc;
+}
+
+input[type="search"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font: inherit;
+}
+
+
+/* ---------- Cards ---------- */
+
+.your-projects article,
+.announcements > div,
+.trending > div {
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.your-projects {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+
+    display: grid;
+    gap: 12px;
+}
+
+.announcements {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+
+    display: grid;
+    gap: 12px;
+}
+
+.announcements > div > div {
+    padding: 16px;
+}
+
+.trending {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+
+    display: grid;
+    gap: 12px;
+}
+
+
+/* ---------- Typography ---------- */
+
+h1, h2, h3 {
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+p {
+    font-size: 14px;
+    color: #444;
+}
